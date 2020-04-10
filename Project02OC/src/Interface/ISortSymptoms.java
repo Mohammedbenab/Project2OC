@@ -1,5 +1,6 @@
 package Interface;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 /**
@@ -11,8 +12,8 @@ import java.util.HashMap;
  *
  */
 
-public interface IDisplaySymptoms {
+public interface ISortSymptoms {
 	
-	void displayAllSymptom(HashMap<String, Integer> input);
+	HashMap<String, Integer> symptomsSorted(HashMap<String, Integer> input) throws IOException;
 
 }
