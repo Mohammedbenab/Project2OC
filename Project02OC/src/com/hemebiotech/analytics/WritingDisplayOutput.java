@@ -13,7 +13,8 @@ import Interface.ISortSymptoms;
  * 
  * @author Benabdallah Mohammed
  * 
- * 
+ * This function allows to sort all symptoms in alphabetical order and 
+ * display in the file.out
  *
  */
 
@@ -26,7 +27,12 @@ public class WritingDisplayOutput implements ISortSymptoms{
 	private TreeMap<String, Integer> sortedFile;
 	
 	/**
-	 * @param output
+	 * @param outputFile
+	 * 					This is path of the file output
+	 * @param sortedFile
+	 * 					All symptoms will be sorting by TreeMap
+	 * @param outSymptoms
+	 * 					Symptoms sorted and display in the output file
 	 */
 
 	@Override

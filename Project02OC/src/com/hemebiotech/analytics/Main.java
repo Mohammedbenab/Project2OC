@@ -17,10 +17,7 @@ public class Main {
 		 CountSymptom countSymptom = new CountSymptom();
 		 HashMap<String, Integer> count = countSymptom.symptomCount(fileReader);
 		 
-		 //Third, we 
-		 //SortNaturalOrder fileSort = new SortNaturalOrder();
-		 //HashMap<String, Integer> outputeFile = fileSort.symptomsSorted(count);
-		 
+		 //Third, we sort Hashmap list by a TreeMap and display them in the output file	 
 		 WritingDisplayOutput finalOutput = new WritingDisplayOutput();
 		 finalOutput.symptomsSorted(count);
 		 
