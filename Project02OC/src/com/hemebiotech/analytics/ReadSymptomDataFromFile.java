@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import Interface.ISymptomReader;
+
 /**
  * 
  * @author Benabdallah Mohammed
@@ -32,7 +34,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 */
 	
 	@Override
-	public List<String> getSymptoms() {
+	public List<String> getSymptoms() throws IOException{
 		
 		result = new ArrayList<String>();
 		filePath = "symptoms.txt";
