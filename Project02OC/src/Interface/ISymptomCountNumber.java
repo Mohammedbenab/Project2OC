@@ -1,7 +1,10 @@
 package Interface;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import com.hemebiotech.analytics.Symptom;
 
 /**
  * @author Benabdallah Mohammed
@@ -12,6 +15,6 @@ import java.util.List;
  */
 public interface ISymptomCountNumber {
 	
-	HashMap<String, Integer> symptomCount (List<String> readFile);
+	ArrayList<Symptom> symptomCount (List<String> readFile);
 
 }
