@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import Interface.ISymptomCountNumber;
@@ -12,7 +11,7 @@ import Interface.ISymptomCountNumber;
  * @version 1.0
  *
  *          Class CountSymptom is implement of interface ISymptomCountNumber.
- *          This class count number of symptom which present in the file
+ *          This class count number of symptom which present in the file.
  */
 
 public class CountSymptom implements ISymptomCountNumber {
@@ -37,21 +36,18 @@ public class CountSymptom implements ISymptomCountNumber {
 	public ArrayList<Symptom> symptomCount(List<String> readFile) {
 
 		resultF = new ArrayList<Symptom>();
-
-		int i = 0;
-
-		while (i < readFile.size()) {
-
-			if (!resultF.contains(readFile.get(i))) {
-
-				resultF.add(new Symptom(readFile.get(i), 1));
-
-			} else if (resultF.contains(readFile.get(i))) {
-
+		
+		for (int i = 0; i < readFile.size(); i++) {
+			if (!resultF.contains(resultF.get(i))){
 				
+				resultF.add(new Symptom(readFile.get(i), 1));
+				
+			}else if (resultF.contains(resultF.get(i))){
+				
+				resultF.get(i).setNbrRepeat(+1);
 			}
-			i++;
 		}
+
 
 		return resultF;
 	}
