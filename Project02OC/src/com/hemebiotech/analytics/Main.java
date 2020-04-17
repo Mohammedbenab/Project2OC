@@ -5,24 +5,30 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Main {
-	
-	
+
 	public static <E> void main(String args[]) throws Exception {
 		
-		 //First, we collect all symptoms in a ArrayLit
-		 ReadSymptomDataFromFile file = new ReadSymptomDataFromFile();
-		 List<String> fileReader = file.getSymptoms();
-		 	 
-		 //Second, we count number of symptoms and we integrate name of symptoms and number of repeat 
-		 //in the HashMap list.
-		 //CountSymptom countSymptom = new CountSymptom();
-		 //HashMap<String, Integer> count = countSymptom.symptomCount(fileReader);
-		 
-		 //Third, we sort Hashmap list by a TreeMap and display them in the output file	 
-		 //WritingDisplayOutput finalOutput = new WritingDisplayOutput();
-		// finalOutput.symptomsSorted(count);
-		 
-		 
-		 
+		// Collect all symptoms in a ArrayLit
+		
+			ReadSymptomDataFromFile file = new ReadSymptomDataFromFile();
+			List<String> fileReader = file.getSymptoms();
+
+		//Count occurrence of symptoms 
+
+			CountSymptom countSymptom = new CountSymptom();
+			HashMap<String, Integer> count = countSymptom.symptomCount(fileReader);
+			
+		//Sort all Symptoms	
+			
+			SortAllSymptoms list = new SortAllSymptoms();
+			List<String> output = new ArrayList<String>();
+			output = list.symptomsSorted(count);		
+			
+
+		//Writing symptoms in the file, and display them
+			
+			WritingDisplayOutput finalOutput = new WritingDisplayOutput();
+			finalOutput.writingSymptomsSorted(output);
+
 	}
 }
