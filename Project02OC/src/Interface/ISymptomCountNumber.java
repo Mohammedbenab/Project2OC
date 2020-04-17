@@ -7,11 +7,11 @@ import java.util.List;
  * @author Benabdallah Mohammed
  * @version 1.0
  * 
- * ISymptomCountNuber is interface for count the number of symptom which represent 
- * in the file
+ *          ISymptomCountNuber is interface for count the number of symptom
+ *          which represent in the file
  */
 public interface ISymptomCountNumber {
-	
-	HashMap<String, Integer> symptomCount (List<String> readFile);
+
+	HashMap<String, Integer> symptomCount(List<String> readFile);
 
 }

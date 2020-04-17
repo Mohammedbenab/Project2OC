@@ -4,68 +4,62 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 import Interface.ISortSymptoms;
+import Interface.IWritingSymptomsSorted;
 
 /**
  * 
  * @author Benabdallah Mohammed
  * 
- * This function allows to sort all symptoms in alphabetical order and 
- * display in the file.out
+ *         This function allows to sort all symptoms in alphabetical order and
+ *         display in the file.out
  *
  */
 
+public class WritingDisplayOutput implements IWritingSymptomsSorted {
 
-public class WritingDisplayOutput implements ISortSymptoms{
-
-	
 	private String outputFile;
 	private String outSymptoms;
-	private TreeMap<String, Integer> sortedFile;
-	
+
 	/**
-	 * @param outputFile
-	 * 					This is path of the file output
-	 * @param sortedFile
-	 * 					All symptoms will be sorting by TreeMap
-	 * @param outSymptoms
-	 * 					Symptoms sorted and display in the output file
+	 * @param outputFile   This is path of the file output
+	 * @param outSymptoms  Symptoms sorted and display in the output file
+	 * @param bufferWriter
+	 * @return Sorted list of symptoms
 	 */
 
 	@Override
-	public HashMap<String, Integer> symptomsSorted(HashMap<String, Integer> input) throws IOException {
-		
+	public List<String> writingSymptomsSorted(List<String> sortedList) throws IOException {
+
 		outputFile = "results.out";
-		
+
 		BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(outputFile));
-		sortedFile = new TreeMap<>();
-		sortedFile.putAll(input);
-		
-		if (input != null) {
-			
+
+		if (sortedList != null) {
+
 			try {
 
-				 for (Map.Entry<String, Integer> mapElement : sortedFile.entrySet()) { 
-					 				 
-			            outSymptoms = "Symptom " + mapElement.getKey() + " = " + mapElement.getValue(); 
-			            System.out.println(outSymptoms);
-			            bufferWriter.write(outSymptoms);
-			            bufferWriter.newLine();
-			        } 
-					
-				
-			}finally {
-					try {
-						bufferWriter.close();
-					}catch	(IOException e){
-							e.printStackTrace();
-					}
+				for (int i = 0; i < sortedList.size(); i++) {
+
+					outSymptoms = sortedList.get(i);
+					System.out.println(outSymptoms);
+					bufferWriter.write(outSymptoms);
+					bufferWriter.newLine();
+				}
+
+			} finally {
+				try {
+					bufferWriter.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
-		return null;
+		return sortedList;
 	}
-		
+
 }
