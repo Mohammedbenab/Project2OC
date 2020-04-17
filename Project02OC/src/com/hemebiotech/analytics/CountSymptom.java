@@ -3,7 +3,7 @@ package com.hemebiotech.analytics;
 import java.util.HashMap;
 import java.util.List;
 
-import Interface.ISymptomCountNumber;
+import com.hemebiotech.interfaces.ISymptomCountNumber;
 
 /**
  * 

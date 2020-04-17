@@ -1,4 +1,4 @@
-package Interface;
+package com.hemebiotech.interfaces;
 
 import java.util.HashMap;
 import java.util.List;

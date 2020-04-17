@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import Interface.ISortSymptoms;
-import Interface.IWritingSymptomsSorted;
+import com.hemebiotech.interfaces.ISortSymptoms;
+import com.hemebiotech.interfaces.IWritingSymptomsSorted;
 
 /**
  * 
