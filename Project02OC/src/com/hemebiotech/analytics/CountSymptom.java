@@ -17,16 +17,13 @@ import com.hemebiotech.interfaces.ISymptomCountNumber;
 public class CountSymptom implements ISymptomCountNumber {
 
 	private HashMap<String, Integer> sympmtomHm;
-	private int repeat;
 
 	/**
 	 * This function create object for each symptom, and class them in hashMap list.
 	 * 
 	 * @param symptomHp is a list of symptoms with name key and occurrence value.
 	 * 
-	 * @param repeat    This number will increase each time the symptoms is repeated
-	 *                  in the file.
-	 * @return resulF This is hashMap list of all symptoms.
+	 * @return sympmtomHm This is hashMap list of all symptoms.
 	 */
 
 	@Override
@@ -42,8 +39,7 @@ public class CountSymptom implements ISymptomCountNumber {
 
 			} else if (sympmtomHm.containsKey(readFile.get(i))) {
 
-				repeat = sympmtomHm.get(readFile.get(i));
-				sympmtomHm.replace(readFile.get(i), repeat + 1);
+				sympmtomHm.replace(readFile.get(i), sympmtomHm.get(readFile.get(i)) + 1);
 			}
 		}
 		return sympmtomHm;

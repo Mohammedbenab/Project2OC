@@ -3,12 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
-import com.hemebiotech.interfaces.ISortSymptoms;
 import com.hemebiotech.interfaces.IWritingSymptomsSorted;
 
 /**
@@ -33,15 +29,17 @@ public class WritingDisplayOutput implements IWritingSymptomsSorted {
 	 */
 
 	@Override
-	public List<String> writingSymptomsSorted(List<String> sortedList) throws IOException {
+	public List<String> writingSymptomsSorted(List<String> sortedList) {
 
 		outputFile = "results.out";
 
-		BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(outputFile));
+		BufferedWriter bufferWriter = null;
 
 		if (sortedList != null) {
 
 			try {
+
+				bufferWriter = new BufferedWriter(new FileWriter(outputFile));
 
 				for (int i = 0; i < sortedList.size(); i++) {
 
@@ -51,6 +49,8 @@ public class WritingDisplayOutput implements IWritingSymptomsSorted {
 					bufferWriter.newLine();
 				}
 
+			} catch (IOException e) {
+				e.printStackTrace();
 			} finally {
 				try {
 					bufferWriter.close();
