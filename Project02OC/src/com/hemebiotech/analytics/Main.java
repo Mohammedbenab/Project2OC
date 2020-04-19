@@ -8,7 +8,7 @@ public class Main {
 
 	public static void main(String args[]) {
 
-		// Collect all symptoms in a ArrayLit
+		// Collect all symptoms in an ArrayLit
 		ReadSymptomDataFromFile file = new ReadSymptomDataFromFile();
 		List<String> fileReader = file.getSymptoms();
 
@@ -21,7 +21,7 @@ public class Main {
 		List<String> output = new ArrayList<String>();
 		output = list.symptomsSorted(count);
 		
-		// Writing symptoms in the file, and display them
+		// Writing symptoms in the output file, and display them
 		WritingDisplayOutput finalOutput = new WritingDisplayOutput();
 		finalOutput.writingSymptomsSorted(output);
 

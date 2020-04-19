@@ -16,33 +16,33 @@ import com.hemebiotech.interfaces.ISymptomCountNumber;
 
 public class CountSymptom implements ISymptomCountNumber {
 
-	private HashMap<String, Integer> sympmtomHm;
+	private HashMap<String, Integer> symptomHm;
 
 	/**
 	 * This function create object for each symptom, and class them in hashMap list.
 	 * 
-	 * @param symptomHp is a list of symptoms with name key and occurrence value.
+	 * @param symptomHm is a list of symptoms with name key and occurrence value.
 	 * 
-	 * @return sympmtomHm This is hashMap list of all symptoms.
+	 * @return symptomHm This is hashMap list of all symptoms.
 	 */
 
 	@Override
 	public HashMap<String, Integer> symptomCount(List<String> readFile) {
 
-		sympmtomHm = new HashMap<String, Integer>();
+		symptomHm = new HashMap<String, Integer>();
 
 		for (int i = 0; i < readFile.size(); i++) {
 
-			if (!sympmtomHm.containsKey(readFile.get(i))) {
+			if (!symptomHm.containsKey(readFile.get(i))) {
 
-				sympmtomHm.put(readFile.get(i), 1);
+				symptomHm.put(readFile.get(i), 1);
 
-			} else if (sympmtomHm.containsKey(readFile.get(i))) {
+			} else if (symptomHm.containsKey(readFile.get(i))) {
 
-				sympmtomHm.replace(readFile.get(i), sympmtomHm.get(readFile.get(i)) + 1);
+				symptomHm.replace(readFile.get(i), symptomHm.get(readFile.get(i)) + 1);
 			}
 		}
-		return sympmtomHm;
+		return symptomHm;
 	}
 
 }
